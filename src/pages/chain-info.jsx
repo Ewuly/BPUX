@@ -4,7 +4,6 @@ import { ethers } from 'ethers'
 
 
 function chainInfo() {
-
     const [connectionStatus, setConnectionStatus] = useState('Disconnected'); // Added state for button text
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const [network, setNetwork] = useState(null);

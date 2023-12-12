@@ -5,6 +5,7 @@ import Page1 from './pages/chain-info'
 import FakeBayc from './pages/fakeBayc';
 import TokenPage from './pages/TokenPage';
 import FakeNefturians from './pages/fakeNefturians';
+import UserTokensPage from './pages/UserTokensPage';
 
 
 import './App.css'
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/fakeBayc" element={<FakeBayc />} />
           <Route exact path="/fakeBayc/:tokenId" element={<TokenPage />} />
           <Route exact path="/fakeNefturians" element={<FakeNefturians />} />
+          <Route exact path="/fakeNefturians/:userAddress" element={<UserTokensPage />} />
         </Routes>
       </Router>
     </>
