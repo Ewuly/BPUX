@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { ethers } from 'ethers'
 import { Link, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Page1 from './pages/chain-info'
-import FakeBayc from './pages/fakeBayc';
-import TokenPage from './pages/TokenPage';
-import FakeNefturians from './pages/fakeNefturians';
-import UserTokensPage from './pages/UserTokensPage';
+import Page1 from './pages/chain-info.jsx'
+import FakeBayc from './pages/fakeBayc.jsx';
+import TokenPage from './pages/TokenPage.jsx';
+import FakeNefturians from './pages/fakeNefturians.jsx';
+import UserTokensPage from './pages/UserTokensPage.jsx';
 
 
 import './App.css'
@@ -30,7 +30,7 @@ function App() {
           </>} />
           <Route exact path="/chain-info" element={<Page1 />} />
           <Route exact path="/fakeBayc" element={<FakeBayc />} />
-          <Route exact path="/fakeBayc/:tokenId" element={<TokenPage />} />
+          <Route path="/fakeBayc/:tokenId" element={<TokenPage />} />
           <Route exact path="/fakeNefturians" element={<FakeNefturians />} />
           <Route exact path="/fakeNefturians/:userAddress" element={<UserTokensPage />} />
         </Routes>
