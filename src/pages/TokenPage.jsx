@@ -1,13 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { abi, contractAddress } from "./fakeBaycContract.js";
 import { ethers } from 'ethers'; // Import ethers library
+
 
 function TokenPage() {
     const { tokenId } = useParams();
     const [tokenData, setTokenData] = useState(null);
     const [imageURL, setImageURL] = useState('');
+
+    // const convertIpfsUrl = (url) => {
+    //     return url.replace(/^ipfs:\/\//, "https://ipfs.io/ipfs/");
+    // };
+    // useEffect(() => {
+    //     const fetchMetadata = async () => {
+    //         const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //         const contract = new ethers.Contract(contractAddress, abi, provider);
+
+    //         try {
+    //             const tokenUri = await contract.tokenURI(tokenId);
+    //             const response = await fetch(tokenUri);
+    //             const metadata = await response.json();
+    //             setMetadata(metadata);
+    //         } catch (error) {
+    //             setError("Error fetching token metadata");
+    //             console.error("Error fetching token metadata:", error);
+    //         }
+    //     };
+
+    //     fetchMetadata();
+    // }, [tokenId]);
 
     useEffect(() => {
         const fetchTokenData = async () => {
@@ -54,6 +77,8 @@ function TokenPage() {
         );
     }
 
+
+
     return (
         <>
             <div>
@@ -67,6 +92,23 @@ function TokenPage() {
                     ))}
                 </div>
             </div>
+            {/* <div>
+                {error ? (
+                    <p>Error: {error}</p> // Display error message
+                ) : metadata ? (
+                    <>
+                        <img src={convertIpfsUrl(metadata.image)} alt={`Token ${tokenId}`} />
+                        <p>Attributes :</p>
+                        <ul>
+                            {metadata.attributes.map((attribute, index) => (
+                                <li key={index}>{`${attribute.trait_type}: ${attribute.value}`}</li>
+                            ))}
+                        </ul>
+                    </>
+                ) : (
+                    <p>Loading...</p>
+                )}
+            </div> */}
             <div>
                 <Link to="/">Page Principale</Link>
             </div>
