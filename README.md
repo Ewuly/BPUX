@@ -1,7 +1,8 @@
 # TD UX
 
 You can find the online website here : https://bpux.vercel.app/  
-https://www.youtube.com/watch?v=db2jhDZQcaw
+
+https://github.com/Ewuly/BPUX/assets/72886617/2604d08a-4fd5-4b32-8451-70014ca708b6
 
 ## What we did ?  
 
